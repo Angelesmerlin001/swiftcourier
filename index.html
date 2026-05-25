@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SwiftLane Courier</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f7fb;
+      color: #1e293b;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1d4ed8, #0891b2);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 56px;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 20px;
+      opacity: 0.9;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .tracking-demo {
+      margin-top: 30px;
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      padding: 20px 30px;
+      border-radius: 18px;
+      backdrop-filter: blur(8px);
+    }
+
+    .tracking-demo h2 {
+      margin-bottom: 10px;
+    }
+
+    .tracking-code {
+      background: rgba(0,0,0,0.2);
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 24px;
+      letter-spacing: 2px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    section {
+      padding: 70px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card h3 {
+      margin-bottom: 12px;
+      color: #1d4ed8;
+    }
+
+    .tracking-box {
+      background: white;
+      max-width: 700px;
+      margin: auto;
+      padding: 40px;
+      border-radius: 24px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .tracking-box input {
+      width: 100%;
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid #cbd5e1;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    .tracking-box button {
+      margin-top: 20px;
+      background: #1d4ed8;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .tracking-box button:hover {
+      background: #1e40af;
+    }
+
+    .tracking-result {
+      display: none;
+      margin-top: 40px;
+      text-align: left;
+      background: #f8fafc;
+      padding: 30px;
+      border-radius: 18px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .status {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .info-card {
+      background: white;
+      padding: 20px;
+      border-radius: 14px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .timeline {
+      margin-top: 40px;
+    }
+
+    .timeline-item {
+      background: white;
+      border-left: 5px solid #2563eb;
+      padding: 18px 20px;
+      margin-bottom: 18px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .timeline-item small {
+      color: #64748b;
+    }
+
+    footer {
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>SwiftLane Courier</h1>
+    <p>
+      Fast, secure, and reliable parcel delivery services across Nigeria and worldwide.
+    </p>
+
+    <div class="tracking-demo">
+      <h2>Demo Tracking Code</h2>
+      <div class="tracking-code">SWL-4729-8841-NG</div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <h2 style="text-align:center; font-size:40px;">Our Services</h2>
+
+      <div class="services">
+        <div class="service-card">
+          <h3>Same-Day Delivery</h3>
+          <p>Urgent city-wide package dispatch with real-time updates.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>International Shipping</h3>
+          <p>Secure worldwide freight and parcel forwarding solutions.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>Live Parcel Tracking</h3>
+          <p>Track every shipment stage from pickup to final delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="tracking-box">
+      <h2 style="font-size:36px;">Track Your Shipment</h2>
+      <p style="margin-top:10px; color:#64748b;">
+        Enter your tracking number below to view shipment updates.
+      </p>
+
+      <input type="text" id="trackingInput" placeholder="Enter Tracking Code" />
+      <button onclick="trackParcel()">Track Parcel</button>
+
+      <div class="tracking-result" id="trackingResult">
+        <h2>Shipment Tracking</h2>
+        <p style="margin-top:10px;">
+          Tracking Code: <strong>SWL-4729-8841-NG</strong>
+        </p>
+
+        <div class="status">In Transit</div>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <small>Origin</small>
+            <h3>Lagos Distribution Hub</h3>
+          </div>
+
+          <div class="info-card">
+            <small>Destination</small>
+            <h3>Port Harcourt, Rivers State</h3>
+          </div>
+
+          <div class="info-card">
+            <small>Estimated Delivery</small>
+            <h3>May 28, 2026</h3>
+          </div>
+        </div>
+
+        <div style="margin-top:40px;">
+          <h3 style="margin-bottom:20px;">Live Shipment Location</h3>
+
+          <div style="background:white; border-radius:18px; overflow:hidden; border:1px solid #e2e8f0; box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+            <div style="position:relative; width:100%; height:400px; background:#dbeafe;">
+              <iframe
+                src="https://maps.google.com/maps?q=New%20York%20City&t=&z=10&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="400"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy">
+              </iframe>
+
+              <div id="truckMarker" style="
+                position:absolute;
+                top:55%;
+                left:15%;
+                font-size:40px;
+                animation: moveTruck 12s linear infinite;
+              ">
+                🚚
+              </div>
+
+              <div style="
+                position:absolute;
+                top:20px;
+                right:20px;
+                background:#fef3c7;
+                color:#92400e;
+                padding:10px 18px;
+                border-radius:999px;
+                font-weight:bold;
+                box-shadow:0 2px 8px rgba(0,0,0,0.1);
+              ">
+                ● Parcel In Transit
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <style>
+          @keyframes moveTruck {
+            0% {
+              left: 10%;
+            }
+            50% {
+              left: 50%;
+            }
+            100% {
+              left: 82%;
+            }
+          }
+        </style>
+
+        <div class="timeline">
+          <h3 style="margin-bottom:20px;">Shipment Timeline</h3>
+
+          <div class="timeline-item">
+            <h4>Parcel Received</h4>
+            <small>Lagos Facility — 08:10 AM</small>
+          </div>
+
+          <div class="timeline-item">
+            <h4>Package Processed</h4>
+            <small>Ibadan Transit Center — 12:45 PM</small>
+          </div>
+
+          <div class="timeline-item">
+            <h4>Shipment In Transit</h4>
+            <small>Benin Express Route — 04:30 PM</small>
+          </div>
+
+          <div class="timeline-item">
+            <h4>Arriving at Destination Hub</h4>
+            <small>Port Harcourt — Pending</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <h3>SwiftLane Courier</h3>
+    <p style="margin-top:8px; opacity:0.8;">
+      Reliable logistics • Trusted delivery • Real-time tracking
+    </p>
+  </footer>
+
+  <script>
+    function trackParcel() {
+      const input = document.getElementById('trackingInput').value.trim().toUpperCase();
+      const result = document.getElementById('trackingResult');
+
+      if(input === 'SWL-4729-8841-NG') {
+        result.style.display = 'block';
+        result.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        alert('Tracking code not found.');
+      }
+    }
+  </script>
+
+</body>
+</html>
